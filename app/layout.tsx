@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "বেস্ট স্টাডি",
+  title: "বেস্ট টিউটোরিয়াল হোম",
   description:
     "বাংলা মিডিয়ামের শিক্ষার্থীদের জন্য English Grammar, Writing, Reading, Vocabulary ও Board English শেখার প্ল্যাটফর্ম।",
   icons: {

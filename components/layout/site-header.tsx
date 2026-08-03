@@ -24,8 +24,8 @@ export function SiteHeader() {
                 priority
               />
             </span>
-            <span className="hidden text-lg font-bold text-best-green sm:inline">বেস্ট স্টাডি</span>
-            <span className="sr-only">বেস্ট স্টাডি হোম</span>
+            <span className="hidden text-lg font-bold text-best-green sm:inline">বেস্ট টিউটোরিয়াল হোম</span>
+            <span className="sr-only">বেস্ট টিউটোরিয়াল হোম</span>
           </Link>
 
           <nav aria-label="প্রধান নেভিগেশন" className="order-3 w-full md:order-none md:w-auto">

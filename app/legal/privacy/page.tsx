@@ -3,9 +3,9 @@ import { Container } from "@/components/layout/container";
 import { LegalDraftNotice } from "@/components/legal/legal-draft-notice";
 
 export const metadata: Metadata = {
-  title: "গোপনীয়তা নীতি (খসড়া) — বেস্ট স্টাডি",
+  title: "গোপনীয়তা নীতি (খসড়া) — বেস্ট টিউটোরিয়াল হোম",
   description:
-    "বেস্ট স্টাডির গোপনীয়তা নীতির খসড়া স্থানধারক। প্রতিষ্ঠাতা ও আইনি অনুমোদন বাকি।",
+    "বেস্ট টিউটোরিয়াল হোমর গোপনীয়তা নীতির খসড়া স্থানধারক। প্রতিষ্ঠাতা ও আইনি অনুমোদন বাকি।",
 };
 
 export default function PrivacyPage() {

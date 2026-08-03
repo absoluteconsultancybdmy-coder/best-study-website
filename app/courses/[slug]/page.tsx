@@ -18,7 +18,7 @@ export async function generateMetadata({
   const course = getCourseBySlug(slug);
   if (!course) return {};
   return {
-    title: `${course.title} — বেস্ট স্টাডি`,
+    title: `${course.title} — বেস্ট টিউটোরিয়াল হোম`,
     description: course.shortDescription,
   };
 }

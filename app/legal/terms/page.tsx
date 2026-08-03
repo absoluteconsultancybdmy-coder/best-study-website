@@ -3,9 +3,9 @@ import { Container } from "@/components/layout/container";
 import { LegalDraftNotice } from "@/components/legal/legal-draft-notice";
 
 export const metadata: Metadata = {
-  title: "ব্যবহারের শর্তাবলি (খসড়া) — বেস্ট স্টাডি",
+  title: "ব্যবহারের শর্তাবলি (খসড়া) — বেস্ট টিউটোরিয়াল হোম",
   description:
-    "বেস্ট স্টাডি ওয়েবসাইটের ব্যবহারের শর্তাবলির খসড়া স্থানধারক। প্রতিষ্ঠাতা ও আইনি অনুমোদন বাকি।",
+    "বেস্ট টিউটোরিয়াল হোম ওয়েবসাইটের ব্যবহারের শর্তাবলির খসড়া স্থানধারক। প্রতিষ্ঠাতা ও আইনি অনুমোদন বাকি।",
 };
 
 export default function TermsPage() {

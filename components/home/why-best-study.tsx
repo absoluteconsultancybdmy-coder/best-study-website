@@ -34,7 +34,7 @@ export function WhyBestStudy() {
 
         <div className="why-method-panel">
           <div>
-            <p className="story-kicker" lang="en">Why Best Study</p>
+            <p className="story-kicker" lang="en">Why BEST TUTORIAL HOME</p>
             <h3>বোঝা থেকে প্রয়োগ—একটি গুছানো পথ।</h3>
           </div>
           <ol className="why-method-grid">

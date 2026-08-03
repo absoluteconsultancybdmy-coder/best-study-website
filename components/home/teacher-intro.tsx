@@ -11,7 +11,7 @@ export function TeacherIntro() {
 
           <div>
             <p className="story-kicker" lang="en">Meet the person behind BEST</p>
-            <p className="mt-3 text-sm font-semibold text-best-green">Best Study-এর Owner</p>
+            <p className="mt-3 text-sm font-semibold text-best-green">BEST TUTORIAL HOME-এর Owner</p>
             <h2 id="teacher-intro-title" className="mt-2 text-3xl sm:text-4xl">
               <span className="content-placeholder">[শিক্ষকের নাম] PLACEHOLDER</span>
             </h2>
@@ -19,7 +19,7 @@ export function TeacherIntro() {
               [শিক্ষকের আসল পরিচিতি / পড়ানোর অভিজ্ঞতা যোগ হবে] PLACEHOLDER
             </p>
             <p className="mt-3 max-w-2xl text-best-body">
-              Best Study-এর Owner-এর বিস্তারিত পরিচিতি এবং English learning role
+              BEST TUTORIAL HOME-এর Owner-এর বিস্তারিত পরিচিতি এবং English learning role
               প্রতিষ্ঠাতার অনুমোদনের পর প্রকাশ করা হবে।
             </p>
 

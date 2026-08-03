@@ -5,9 +5,9 @@ import { OwnerPortrait3D } from "@/components/brand/owner-portrait-3d";
 import { Container } from "@/components/layout/container";
 
 export const metadata: Metadata = {
-  title: "Best Study Owner পরিচিতি — বেস্ট স্টাডি",
+  title: "BEST TUTORIAL HOME Owner পরিচিতি — বেস্ট টিউটোরিয়াল হোম",
   description:
-    "Best Study-এর Owner পরিচিতি এবং English learning platform-এর অনুমোদন-অপেক্ষমাণ তথ্য।",
+    "BEST TUTORIAL HOME-এর Owner পরিচিতি এবং English learning platform-এর অনুমোদন-অপেক্ষমাণ তথ্য।",
 };
 
 const helpItems = [
@@ -51,7 +51,7 @@ export default function TeacherPage() {
 
             <div>
               <p className="text-sm font-semibold text-best-muted">
-                Best Study-এর Owner
+                BEST TUTORIAL HOME-এর Owner
               </p>
               <h1 id="teacher-page-title" className="mt-2 text-3xl sm:text-4xl">
                 <span className="content-placeholder">
@@ -158,7 +158,7 @@ export default function TeacherPage() {
 
             <div>
               <h2 id="teacher-video-title" className="text-2xl sm:text-3xl">
-                Best Study-এর Owner-কে জানো
+                BEST TUTORIAL HOME-এর Owner-কে জানো
               </h2>
               <p className="content-placeholder mt-4">
                 [Owner-এর অনুমোদিত পরিচিতি ভিডিও ও ভিডিওর সারসংক্ষেপ] PLACEHOLDER

@@ -20,14 +20,14 @@ export function SiteFooter() {
               <span className="footer-brand-logo">
                 <Image
                   src="/images/brand/best-study-logo.png"
-                  alt="BEST Tutorial Home logo"
+                  alt="BEST TUTORIAL HOME logo"
                   fill
                   sizes="76px"
                   className="object-contain"
                 />
               </span>
               <span>
-                <strong>বেস্ট স্টাডি</strong>
+                <strong>বেস্ট টিউটোরিয়াল হোম</strong>
                 <small lang="en">English subject-only learning</small>
               </span>
             </Link>

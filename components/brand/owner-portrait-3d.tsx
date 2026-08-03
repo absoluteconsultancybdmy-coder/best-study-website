@@ -23,7 +23,7 @@ export function OwnerPortrait3D({
         <div className="owner-portrait-frame">
           <Image
             src="/images/brand/best-study-owner-primary.png"
-            alt="Best Study owner portrait"
+            alt="BEST TUTORIAL HOME owner portrait"
             fill
             priority={priority}
             sizes={
@@ -36,7 +36,7 @@ export function OwnerPortrait3D({
           <div aria-hidden="true" className="owner-portrait-rim-light" />
           <div aria-hidden="true" className="owner-portrait-sheen" />
         </div>
-        <span className="owner-role-chip" lang="en">Best Study Owner</span>
+        <span className="owner-role-chip" lang="en">BEST TUTORIAL HOME Owner</span>
         <span aria-hidden="true" className="owner-brand-chip" lang="en">
           BEST · OWNER
         </span>
@@ -44,7 +44,7 @@ export function OwnerPortrait3D({
 
       {showCaption ? (
         <figcaption className="owner-portrait-caption">
-          <strong>Best Study-এর Owner</strong>
+          <strong>BEST TUTORIAL HOME-এর Owner</strong>
           <span className="content-placeholder">[শিক্ষকের নাম] PLACEHOLDER</span>
           <p>বিস্তারিত পরিচিতি প্রতিষ্ঠাতার অনুমোদনের পর যোগ হবে।</p>
         </figcaption>
