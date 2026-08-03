@@ -8,7 +8,13 @@ import type { DictionaryKey } from "@/lib/i18n/dictionary";
 
 const footerLinks: readonly { href: string; label: DictionaryKey }[] = [
   { href: "/courses", label: "layout.nav.courses" },
+  { href: "/free-class", label: "layout.nav.free" },
   { href: "/teacher", label: "layout.nav.teacher" },
+  { href: "/blog", label: "layout.footer.blog" },
+  { href: "/about", label: "layout.footer.about" },
+  { href: "/faq", label: "layout.footer.faq" },
+  { href: "/pricing", label: "layout.footer.pricing" },
+  { href: "/contact", label: "layout.nav.contact" },
   { href: "/legal/terms", label: "layout.nav.terms" },
   { href: "/legal/privacy", label: "layout.footer.privacy" },
   { href: "/legal/refund", label: "layout.footer.refund" },

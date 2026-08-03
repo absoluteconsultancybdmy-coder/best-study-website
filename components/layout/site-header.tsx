@@ -6,12 +6,12 @@ import { Container } from "@/components/layout/container";
 import { useLanguage } from "@/lib/i18n/language-context";
 import type { DictionaryKey } from "@/lib/i18n/dictionary";
 
-const navigation: readonly DictionaryKey[] = [
-  "layout.nav.courses",
-  "layout.nav.teacher",
-  "layout.nav.terms",
+const navigation: readonly { key: DictionaryKey; href: string }[] = [
+  { key: "layout.nav.courses", href: "/courses" },
+  { key: "layout.nav.free", href: "/free-class" },
+  { key: "layout.nav.teacher", href: "/teacher" },
+  { key: "layout.nav.blog", href: "/blog" },
 ];
-const hrefs = ["/courses", "/teacher", "/legal/terms"] as const;
 
 export function SiteHeader() {
   const { t } = useLanguage();
@@ -39,13 +39,13 @@ export function SiteHeader() {
 
           <nav aria-label={t("layout.nav")} className="order-3 w-full md:order-none md:w-auto">
             <ul className="flex flex-wrap items-center gap-1">
-              {navigation.map((item, i) => (
-                <li key={hrefs[i]}>
+              {navigation.map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={hrefs[i]}
+                    href={item.href}
                     className="tap-target inline-flex items-center px-3 font-medium text-best-body no-underline hover:text-best-green-hover"
                   >
-                    {t(item)}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
