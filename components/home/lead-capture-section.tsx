@@ -7,6 +7,9 @@ const fieldClassName =
   "min-h-12 w-full border border-best-border bg-best-paper px-3 text-best-ink focus:border-best-green";
 
 const classOptions = [
+  { value: "3", key: "lead.class3" },
+  { value: "4", key: "lead.class4" },
+  { value: "5", key: "lead.class5" },
   { value: "6", key: "lead.class6" },
   { value: "7", key: "lead.class7" },
   { value: "8", key: "lead.class8" },
