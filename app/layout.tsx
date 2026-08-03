@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { HtmlLangSync } from "@/components/layout/html-lang-sync";
+import { LanguageToggle } from "@/components/layout/language-toggle";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { LanguageProvider } from "@/lib/i18n/language-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,17 +24,21 @@ export default function RootLayout({
   return (
     <html lang="bn-BD">
       <body className="flex min-h-screen flex-col">
-        <a
-          href="#main-content"
-          className="fixed left-4 top-4 z-50 -translate-y-24 bg-best-ink px-4 py-2 text-best-cream no-underline transition-transform focus:translate-y-0"
-        >
-          মূল কনটেন্টে যান
-        </a>
-        <SiteHeader />
-        <main id="main-content" tabIndex={-1} className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <LanguageProvider>
+          <HtmlLangSync />
+          <LanguageToggle />
+          <a
+            href="#main-content"
+            className="fixed left-4 top-14 z-50 -translate-y-24 bg-best-ink px-4 py-2 text-best-cream no-underline transition-transform focus:translate-y-0"
+          >
+            মূল কনটেন্টে যান
+          </a>
+          <SiteHeader />
+          <main id="main-content" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </LanguageProvider>
       </body>
     </html>
   );

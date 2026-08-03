@@ -1,65 +1,67 @@
+import type { Bi } from "@/lib/i18n/bi";
+
 export type ClassOption = {
   label: string;
-  helper: string;
+  helper: Bi;
   href: string;
 };
 
 export type ClassGroup = {
-  title: string;
+  title: Bi;
   columns: 2 | 5;
   options: readonly ClassOption[];
 };
 
 export type HomeCourse = {
   id: string;
-  audience: string;
+  audience: Bi;
   title: string;
-  description: string;
+  description: Bi;
   coverLabel: string;
-  batchStart: string;
-  seats: string;
-  price: string;
+  batchStart: Bi;
+  seats: Bi;
+  price: Bi;
   detailHref?: string;
 };
 
 export type HomeReason = {
   number: string;
-  title: string;
-  description: string;
+  title: Bi;
+  description: Bi;
 };
 
 export type HomeResource = {
   title: string;
-  description: string;
-  linkLabel: string;
+  description: Bi;
+  linkLabel: Bi;
   href: string;
 };
 
 export type LearningJourneyStep = {
   number: string;
   englishLabel: string;
-  title: string;
-  description: string;
+  title: Bi;
+  description: Bi;
 };
 
 export const classGroups: readonly ClassGroup[] = [
   {
-    title: "ক্লাস",
+    title: { bn: "ক্লাস", en: "Class" },
     columns: 5,
     options: [
-      { label: "৬", helper: "ক্লাস", href: "/courses?class=6" },
-      { label: "৭", helper: "ক্লাস", href: "/courses?class=7" },
-      { label: "৮", helper: "ক্লাস", href: "/courses?class=8" },
-      { label: "৯", helper: "ক্লাস", href: "/courses?class=9" },
-      { label: "১০", helper: "ক্লাস", href: "/courses?class=10" },
+      { label: "৬", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=6" },
+      { label: "৭", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=7" },
+      { label: "৮", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=8" },
+      { label: "৯", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=9" },
+      { label: "১০", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=10" },
     ],
   },
   {
-    title: "পরীক্ষা",
+    title: { bn: "পরীক্ষা", en: "Exams" },
     columns: 2,
     options: [
-      { label: "এসএসসি", helper: "পরীক্ষার্থী", href: "/courses?exam=ssc" },
-      { label: "এইচএসসি", helper: "পরীক্ষার্থী", href: "/courses?exam=hsc" },
+      { label: "এসএসসি", helper: { bn: "পরীক্ষার্থী", en: "Examinee" }, href: "/courses?exam=ssc" },
+      { label: "এইচএসসি", helper: { bn: "পরীক্ষার্থী", en: "Examinee" }, href: "/courses?exam=hsc" },
     ],
   },
 ] as const;
@@ -67,38 +69,44 @@ export const classGroups: readonly ClassGroup[] = [
 export const featuredCourses: readonly HomeCourse[] = [
   {
     id: "course-placeholder-1",
-    audience: "[ক্লাস / পরীক্ষা] PLACEHOLDER",
+    audience: { bn: "[ক্লাস / পরীক্ষা] PLACEHOLDER", en: "[Class / Exam] PLACEHOLDER" },
     title: "English Grammar Foundation",
-    description:
-      "বাংলা মিডিয়ামের শিক্ষার্থীদের জন্য Grammar শেখার উদাহরণমূলক কোর্স বিভাগ। চূড়ান্ত বিবরণ অনুমোদনের পর যোগ হবে।",
+    description: {
+      bn: "বাংলা মিডিয়ামের শিক্ষার্থীদের জন্য Grammar শেখার উদাহরণমূলক কোর্স বিভাগ। চূড়ান্ত বিবরণ অনুমোদনের পর যোগ হবে।",
+      en: "An example course section for Bangla-medium students learning Grammar. Final description will be added after approval.",
+    },
     coverLabel: "English Grammar",
-    batchStart: "[ব্যাচ শুরু] PLACEHOLDER",
-    seats: "[আসন] PLACEHOLDER",
-    price: "[মূল্য] PLACEHOLDER",
+    batchStart: { bn: "[ব্যাচ শুরু] PLACEHOLDER", en: "[Batch start] PLACEHOLDER" },
+    seats: { bn: "[আসন] PLACEHOLDER", en: "[Seats] PLACEHOLDER" },
+    price: { bn: "[মূল্য] PLACEHOLDER", en: "[Price] PLACEHOLDER" },
     detailHref: "/courses/placeholder-course-1",
   },
   {
     id: "course-placeholder-2",
-    audience: "[ক্লাস / পরীক্ষা] PLACEHOLDER",
+    audience: { bn: "[ক্লাস / পরীক্ষা] PLACEHOLDER", en: "[Class / Exam] PLACEHOLDER" },
     title: "Board English Writing",
-    description:
-      "Board English-এর Writing অনুশীলনের উদাহরণমূলক কোর্স বিভাগ। চূড়ান্ত বিবরণ অনুমোদনের পর যোগ হবে।",
+    description: {
+      bn: "Board English-এর Writing অনুশীলনের উদাহরণমূলক কোর্স বিভাগ। চূড়ান্ত বিবরণ অনুমোদনের পর যোগ হবে।",
+      en: "An example course section for Board English Writing practice. Final description will be added after approval.",
+    },
     coverLabel: "English Writing",
-    batchStart: "[ব্যাচ শুরু] PLACEHOLDER",
-    seats: "[আসন] PLACEHOLDER",
-    price: "[মূল্য] PLACEHOLDER",
+    batchStart: { bn: "[ব্যাচ শুরু] PLACEHOLDER", en: "[Batch start] PLACEHOLDER" },
+    seats: { bn: "[আসন] PLACEHOLDER", en: "[Seats] PLACEHOLDER" },
+    price: { bn: "[মূল্য] PLACEHOLDER", en: "[Price] PLACEHOLDER" },
     detailHref: "/courses/placeholder-course-2",
   },
   {
     id: "course-placeholder-3",
-    audience: "[ক্লাস / পরীক্ষা] PLACEHOLDER",
+    audience: { bn: "[ক্লাস / পরীক্ষা] PLACEHOLDER", en: "[Class / Exam] PLACEHOLDER" },
     title: "Reading & Vocabulary Practice",
-    description:
-      "Reading comprehension ও Vocabulary practice-এর উদাহরণমূলক কোর্স বিভাগ। চূড়ান্ত বিবরণ অনুমোদনের পর যোগ হবে।",
+    description: {
+      bn: "Reading comprehension ও Vocabulary practice-এর উদাহরণমূলক কোর্স বিভাগ। চূড়ান্ত বিবরণ অনুমোদনের পর যোগ হবে।",
+      en: "An example course section for Reading comprehension and Vocabulary practice. Final description will be added after approval.",
+    },
     coverLabel: "Reading & Vocabulary",
-    batchStart: "[ব্যাচ শুরু] PLACEHOLDER",
-    seats: "[আসন] PLACEHOLDER",
-    price: "[মূল্য] PLACEHOLDER",
+    batchStart: { bn: "[ব্যাচ শুরু] PLACEHOLDER", en: "[Batch start] PLACEHOLDER" },
+    seats: { bn: "[আসন] PLACEHOLDER", en: "[Seats] PLACEHOLDER" },
+    price: { bn: "[মূল্য] PLACEHOLDER", en: "[Price] PLACEHOLDER" },
     detailHref: "/courses/placeholder-course-3",
   },
 ] as const;
@@ -106,23 +114,35 @@ export const featuredCourses: readonly HomeCourse[] = [
 export const reasons: readonly HomeReason[] = [
   {
     number: "০১",
-    title: "Grammar বুঝে শেখা",
-    description: "[English Grammar বোঝানোর পদ্ধতি ও অনুশীলনের বিস্তারিত] PLACEHOLDER",
+    title: { bn: "Grammar বুঝে শেখা", en: "Learn Grammar with understanding" },
+    description: {
+      bn: "[English Grammar বোঝানোর পদ্ধতি ও অনুশীলনের বিস্তারিত] PLACEHOLDER",
+      en: "[Details of how English Grammar is taught and practised] PLACEHOLDER",
+    },
   },
   {
     number: "০২",
-    title: "Writing অনুশীলন",
-    description: "[Writing practice, feedback ও সংশোধনের পদ্ধতি] PLACEHOLDER",
+    title: { bn: "Writing অনুশীলন", en: "Writing practice" },
+    description: {
+      bn: "[Writing practice, feedback ও সংশোধনের পদ্ধতি] PLACEHOLDER",
+      en: "[Writing practice, feedback and correction process] PLACEHOLDER",
+    },
   },
   {
     number: "০৩",
-    title: "Reading ও Vocabulary",
-    description: "[Reading comprehension ও Vocabulary practice-এর পদ্ধতি] PLACEHOLDER",
+    title: { bn: "Reading ও Vocabulary", en: "Reading & Vocabulary" },
+    description: {
+      bn: "[Reading comprehension ও Vocabulary practice-এর পদ্ধতি] PLACEHOLDER",
+      en: "[Reading comprehension and Vocabulary practice process] PLACEHOLDER",
+    },
   },
   {
     number: "০৪",
-    title: "Board English প্রস্তুতি",
-    description: "[Board English syllabus ও question practice-এর বিস্তারিত] PLACEHOLDER",
+    title: { bn: "Board English প্রস্তুতি", en: "Board English preparation" },
+    description: {
+      bn: "[Board English syllabus ও question practice-এর বিস্তারিত] PLACEHOLDER",
+      en: "[Details of Board English syllabus and question practice] PLACEHOLDER",
+    },
   },
 ] as const;
 
@@ -130,52 +150,76 @@ export const learningJourney: readonly LearningJourneyStep[] = [
   {
     number: "০১",
     englishLabel: "Grammar",
-    title: "ভিত্তি পরিষ্কার করো",
-    description: "Sentence কীভাবে তৈরি হয়—নিয়ম মুখস্থ না করে গঠন বুঝে শুরু করো।",
+    title: { bn: "ভিত্তি পরিষ্কার করো", en: "Clarify the foundation" },
+    description: {
+      bn: "Sentence কীভাবে তৈরি হয়—নিয়ম মুখস্থ না করে গঠন বুঝে শুরু করো।",
+      en: "Learn how sentences are built—start by understanding structure instead of memorising rules.",
+    },
   },
   {
     number: "০২",
     englishLabel: "Writing",
-    title: "নিজের ভাষায় লেখো",
-    description: "Structure থেকে paragraph—ধাপে ধাপে ভাবনাকে English-এ সাজাও।",
+    title: { bn: "নিজের ভাষায় লেখো", en: "Write in your own words" },
+    description: {
+      bn: "Structure থেকে paragraph—ধাপে ধাপে ভাবনাকে English-এ সাজাও।",
+      en: "From structure to paragraph—step by step, shape your thoughts in English.",
+    },
   },
   {
     number: "০৩",
     englishLabel: "Reading",
-    title: "পড়ে অর্থ ধরো",
-    description: "শুধু শব্দ নয়; passage-এর ভাব, clue ও প্রশ্ন বোঝার অভ্যাস তৈরি করো।",
+    title: { bn: "পড়ে অর্থ ধরো", en: "Grasp meaning by reading" },
+    description: {
+      bn: "শুধু শব্দ নয়; passage-এর ভাব, clue ও প্রশ্ন বোঝার অভ্যাস তৈরি করো।",
+      en: "Not just words—build the habit of understanding a passage's idea, clues and questions.",
+    },
   },
   {
     number: "০৪",
     englishLabel: "Vocabulary",
-    title: "শব্দকে কাজে লাগাও",
-    description: "নতুন শব্দকে sentence ও context-এর মধ্যে দেখে ব্যবহার শেখো।",
+    title: { bn: "শব্দকে কাজে লাগাও", en: "Put words to work" },
+    description: {
+      bn: "নতুন শব্দকে sentence ও context-এর মধ্যে দেখে ব্যবহার শেখো।",
+      en: "Learn to use new words by seeing them within sentences and contexts.",
+    },
   },
   {
     number: "০৫",
     englishLabel: "Board Questions",
-    title: "প্রশ্নের ধরন চিনে নাও",
-    description: "Board English প্রস্তুতির অনুমোদিত কাঠামো ও অনুশীলন পরে যোগ হবে।",
+    title: { bn: "প্রশ্নের ধরন চিনে নাও", en: "Recognise question patterns" },
+    description: {
+      bn: "Board English প্রস্তুতির অনুমোদিত কাঠামো ও অনুশীলন পরে যোগ হবে।",
+      en: "The approved structure and practice for Board English preparation will be added later.",
+    },
   },
 ] as const;
 
 export const freeResources: readonly HomeResource[] = [
   {
     title: "Grammar Practice Sheet",
-    description: "[Grammar topic, class level ও worksheet প্রাপ্যতার তথ্য] PLACEHOLDER",
-    linkLabel: "Grammar resource দেখো",
+    description: {
+      bn: "[Grammar topic, class level ও worksheet প্রাপ্যতার তথ্য] PLACEHOLDER",
+      en: "[Grammar topic, class level and worksheet availability] PLACEHOLDER",
+    },
+    linkLabel: { bn: "Grammar resource দেখো", en: "View Grammar resource" },
     href: "#",
   },
   {
     title: "Writing Guide",
-    description: "[Writing format, example ও practice guide-এর তথ্য] PLACEHOLDER",
-    linkLabel: "Writing resource দেখো",
+    description: {
+      bn: "[Writing format, example ও practice guide-এর তথ্য] PLACEHOLDER",
+      en: "[Writing format, example and practice guide information] PLACEHOLDER",
+    },
+    linkLabel: { bn: "Writing resource দেখো", en: "View Writing resource" },
     href: "#",
   },
   {
     title: "Reading & Vocabulary",
-    description: "[Reading passage, word list ও practice-এর তথ্য] PLACEHOLDER",
-    linkLabel: "Reading resource দেখো",
+    description: {
+      bn: "[Reading passage, word list ও practice-এর তথ্য] PLACEHOLDER",
+      en: "[Reading passage, word list and practice information] PLACEHOLDER",
+    },
+    linkLabel: { bn: "Reading resource দেখো", en: "View Reading resource" },
     href: "#",
   },
 ] as const;

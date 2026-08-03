@@ -1,16 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
+import { useLanguage } from "@/lib/i18n/language-context";
+import type { DictionaryKey } from "@/lib/i18n/dictionary";
 
-const footerLinks = [
-  { href: "/courses", label: "কোর্স" },
-  { href: "/teacher", label: "শিক্ষক" },
-  { href: "/legal/terms", label: "শর্তাবলি" },
-  { href: "/legal/privacy", label: "গোপনীয়তা" },
-  { href: "/legal/refund", label: "রিফান্ড নীতি" },
+const footerLinks: readonly { href: string; label: DictionaryKey }[] = [
+  { href: "/courses", label: "layout.nav.courses" },
+  { href: "/teacher", label: "layout.nav.teacher" },
+  { href: "/legal/terms", label: "layout.nav.terms" },
+  { href: "/legal/privacy", label: "layout.footer.privacy" },
+  { href: "/legal/refund", label: "layout.footer.refund" },
 ] as const;
 
 export function SiteFooter() {
+  const { t } = useLanguage();
+
   return (
     <footer className="brand-site-footer bg-best-ink text-best-border">
       <Container className="py-10 sm:py-12">
@@ -27,18 +33,17 @@ export function SiteFooter() {
                 />
               </span>
               <span>
-                <strong>বেস্ট টিউটোরিয়াল হোম</strong>
-                <small lang="en">English subject-only learning</small>
+                <strong>{t("layout.brand")}</strong>
+                <small lang="en">{t("layout.footer.tagline")}</small>
               </span>
             </Link>
             <p className="mt-4 max-w-sm leading-[1.75] text-best-border">
-              বাংলা মিডিয়ামের শিক্ষার্থীদের জন্য English Grammar, Writing, Reading,
-              Vocabulary ও Board English শেখার প্ল্যাটফর্ম।
+              {t("layout.footer.desc")}
             </p>
           </div>
 
-          <nav aria-label="ফুটার নেভিগেশন">
-            <h2 className="text-base font-semibold text-best-cream">প্রয়োজনীয় লিংক</h2>
+          <nav aria-label={t("layout.footer.nav")}>
+            <h2 className="text-base font-semibold text-best-cream">{t("layout.footer.links")}</h2>
             <ul className="mt-3 grid gap-1">
               {footerLinks.map((item) => (
                 <li key={item.href}>
@@ -46,7 +51,7 @@ export function SiteFooter() {
                     href={item.href}
                     className="tap-target inline-flex items-center text-best-border no-underline hover:text-best-cream"
                   >
-                    {item.label}
+                    {t(item.label)}
                   </Link>
                 </li>
               ))}
@@ -54,21 +59,21 @@ export function SiteFooter() {
           </nav>
 
           <div>
-            <h2 className="text-base font-semibold text-best-cream">যোগাযোগ</h2>
+            <h2 className="text-base font-semibold text-best-cream">{t("layout.footer.contact")}</h2>
             <ul className="mt-3 grid gap-1">
               <li>
                 <a href="#" className="tap-target content-placeholder inline-flex text-best-border">
-                  [ফোন নম্বর] PLACEHOLDER
+                  {t("layout.footer.phone")}
                 </a>
               </li>
               <li>
                 <a href="#" className="tap-target content-placeholder inline-flex text-best-border">
-                  [ইমেইল] PLACEHOLDER
+                  {t("layout.footer.email")}
                 </a>
               </li>
             </ul>
             <p className="mt-5 text-sm leading-[1.75] text-best-border">
-              ভবিষ্যৎ পেমেন্ট সহায়তা (এখনও সক্রিয় নয়): bKash · Nagad · Visa
+              {t("layout.footer.payment")}
             </p>
           </div>
         </div>

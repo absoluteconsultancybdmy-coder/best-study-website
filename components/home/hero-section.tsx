@@ -1,36 +1,38 @@
+"use client";
+
 import Link from "next/link";
 import { LiveBookHero } from "@/components/home/live-book-hero";
 import { Container } from "@/components/layout/container";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section aria-labelledby="home-title" className="story-hero">
       <Container className="story-hero-stage">
         <div className="story-hero-copy">
-          <p className="story-eyebrow">English subject-only · বাংলা মিডিয়ামের জন্য</p>
+          <p className="story-eyebrow">{t("hero.eyebrow")}</p>
           <h1 id="home-title" className="story-hero-title">
-            ইংরেজি মুখস্থ না—
-            <span>বোঝে শেখো।</span>
+            {t("hero.title1")}
+            <span>{t("hero.title2")}</span>
           </h1>
-          <p className="story-hero-lead">
-            Grammar, Writing, Reading, Vocabulary ও Board English—বাংলা মিডিয়ামের
-            শিক্ষার্থীদের জন্য পরিষ্কারভাবে সাজানো।
-          </p>
+          <p className="story-hero-lead">{t("hero.lead")}</p>
 
           <div className="story-hero-actions">
             <a href="#lead" className="button-primary tap-target story-primary-cta no-underline">
-              English ফ্রি ক্লাস বুক করো
+              {t("hero.cta.primary")}
             </a>
             <Link href="/courses" className="tap-target story-secondary-cta no-underline">
-              English কোর্স দেখো
+              {t("hero.cta.secondary")}
             </Link>
           </div>
 
           <p className="story-teacher-note">
             <span className="content-placeholder font-semibold">
-              [শিক্ষকের নাম] PLACEHOLDER
+              {t("hero.teacher.name")}
             </span>
-            <span> · English শিক্ষক পরিচিতি পরে যোগ হবে</span>
+            <span> · {t("hero.teacher.note")}</span>
           </p>
         </div>
 
@@ -43,7 +45,7 @@ export function HeroSection() {
 
         <a href="#class-selector-title" className="story-scroll-hint no-underline">
           <span aria-hidden="true" className="story-scroll-line" />
-          <span>স্ক্রল করো · English journey শুরু হোক</span>
+          <span>{t("hero.scroll")}</span>
         </a>
       </Container>
       <div aria-hidden="true" className="hero-to-selector-transition" />

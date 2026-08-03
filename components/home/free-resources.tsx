@@ -1,7 +1,13 @@
+"use client";
+
 import { Container } from "@/components/layout/container";
 import { freeResources } from "@/lib/data/home";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { pick } from "@/lib/i18n/bi";
 
 export function FreeResources() {
+  const { t, lang } = useLanguage();
+
   return (
     <section
       aria-labelledby="free-resources-title"
@@ -9,12 +15,9 @@ export function FreeResources() {
     >
       <Container className="py-10 sm:py-14">
         <h2 id="free-resources-title" className="text-2xl sm:text-3xl">
-          ফ্রি English রিসোর্স
+          {t("resources.title")}
         </h2>
-        <p className="mt-2 text-best-muted">
-          Grammar, Writing, Reading ও Vocabulary resource-এর বাস্তব download
-          link অনুমোদনের পর যোগ হবে।
-        </p>
+        <p className="mt-2 text-best-muted">{t("resources.lead")}</p>
 
         <div className="mt-6 grid gap-3 md:grid-cols-3">
           {freeResources.map((resource) => (
@@ -25,10 +28,10 @@ export function FreeResources() {
             >
               <h3 className="text-xl">{resource.title}</h3>
               <p className="content-placeholder mt-2 text-[15px]">
-                {resource.description}
+                {pick(lang, resource.description)}
               </p>
               <span className="mt-3 inline-block font-semibold text-best-green">
-                {resource.linkLabel} →
+                {pick(lang, resource.linkLabel)} →
               </span>
             </a>
           ))}

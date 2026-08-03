@@ -1,14 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
+import { useLanguage } from "@/lib/i18n/language-context";
+import type { DictionaryKey } from "@/lib/i18n/dictionary";
 
-const navigation = [
-  { href: "/courses", label: "কোর্স" },
-  { href: "/teacher", label: "শিক্ষক" },
-  { href: "/legal/terms", label: "শর্তাবলি" },
-] as const;
+const navigation: readonly DictionaryKey[] = [
+  "layout.nav.courses",
+  "layout.nav.teacher",
+  "layout.nav.terms",
+];
+const hrefs = ["/courses", "/teacher", "/legal/terms"] as const;
 
 export function SiteHeader() {
+  const { t } = useLanguage();
+
   return (
     <header className="story-site-header sticky top-0 z-20 border-b border-best-border bg-best-cream">
       <Container className="py-1.5 sm:py-2">
@@ -24,19 +31,21 @@ export function SiteHeader() {
                 priority
               />
             </span>
-            <span className="hidden text-lg font-bold text-best-green sm:inline">বেস্ট টিউটোরিয়াল হোম</span>
-            <span className="sr-only">বেস্ট টিউটোরিয়াল হোম</span>
+            <span className="hidden text-lg font-bold text-best-green sm:inline">
+              {t("layout.brand")}
+            </span>
+            <span className="sr-only">{t("layout.brand")}</span>
           </Link>
 
-          <nav aria-label="প্রধান নেভিগেশন" className="order-3 w-full md:order-none md:w-auto">
+          <nav aria-label={t("layout.nav")} className="order-3 w-full md:order-none md:w-auto">
             <ul className="flex flex-wrap items-center gap-1">
-              {navigation.map((item) => (
-                <li key={item.href}>
+              {navigation.map((item, i) => (
+                <li key={hrefs[i]}>
                   <Link
-                    href={item.href}
+                    href={hrefs[i]}
                     className="tap-target inline-flex items-center px-3 font-medium text-best-body no-underline hover:text-best-green-hover"
                   >
-                    {item.label}
+                    {t(item)}
                   </Link>
                 </li>
               ))}
@@ -48,14 +57,14 @@ export function SiteHeader() {
               href="#"
               className="header-contact-chip tap-target content-placeholder hidden items-center lg:inline-flex"
             >
-              [ফোন নম্বর] PLACEHOLDER
+              {t("layout.contact.phone")}
             </a>
             <Link
               href="/#lead"
               className="button-primary tap-target inline-flex items-center justify-center px-3 py-2 text-center text-sm font-semibold no-underline sm:px-4 sm:text-base"
             >
-              <span className="sm:hidden">ফ্রি ক্লাস</span>
-              <span className="hidden sm:inline">English ফ্রি ক্লাস বুক করো</span>
+              <span className="sm:hidden">{t("layout.cta.short")}</span>
+              <span className="hidden sm:inline">{t("layout.cta.full")}</span>
             </Link>
           </div>
         </div>

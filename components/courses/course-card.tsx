@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { CourseCover } from "@/components/courses/course-cover";
 import type { HomeCourse } from "@/lib/data/home";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { pick } from "@/lib/i18n/bi";
 
 type CourseCardProps = {
   course: HomeCourse;
@@ -9,35 +13,36 @@ type CourseCardProps = {
 };
 
 export function CourseCard({ course, detailHref = "/courses", sequence }: CourseCardProps) {
+  const { t, lang } = useLanguage();
   const titleId = `${course.id}-title`;
 
   return (
     <article aria-labelledby={titleId} className="story-course-card">
       <div className="story-course-cover-wrap">
         <CourseCover label={course.coverLabel} sequence={sequence} />
-        <span className="course-cover-status">উদাহরণমূলক কভার</span>
+        <span className="course-cover-status">{t("coursecard.status")}</span>
       </div>
 
       <div className="story-course-content">
-        <p className="content-placeholder story-course-audience">{course.audience}</p>
+        <p className="content-placeholder story-course-audience">{pick(lang, course.audience)}</p>
         <h3 id={titleId}>{course.title}</h3>
-        <p className="story-course-description">{course.description}</p>
+        <p className="story-course-description">{pick(lang, course.description)}</p>
 
         <dl className="story-course-meta">
           <div>
-            <dt>ব্যাচ শুরু</dt>
-            <dd className="content-placeholder">{course.batchStart}</dd>
+            <dt>{t("coursecard.batch")}</dt>
+            <dd className="content-placeholder">{pick(lang, course.batchStart)}</dd>
           </div>
           <div>
-            <dt>আসন</dt>
-            <dd className="content-placeholder">{course.seats}</dd>
+            <dt>{t("coursecard.seats")}</dt>
+            <dd className="content-placeholder">{pick(lang, course.seats)}</dd>
           </div>
         </dl>
 
         <div className="story-course-footer">
-          <p className="content-placeholder story-course-price">{course.price}</p>
+          <p className="content-placeholder story-course-price">{pick(lang, course.price)}</p>
           <Link href={detailHref} className="button-primary tap-target story-course-cta no-underline">
-            বিস্তারিত দেখো <span aria-hidden="true">↗</span>
+            {t("coursecard.details")} <span aria-hidden="true">↗</span>
           </Link>
         </div>
       </div>

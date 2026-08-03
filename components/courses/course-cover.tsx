@@ -1,15 +1,20 @@
+"use client";
+
+import { useLanguage } from "@/lib/i18n/language-context";
+
 type CourseCoverProps = {
   label: string;
   sequence?: number;
 };
 
 export function CourseCover({ label, sequence }: CourseCoverProps) {
+  const { t } = useLanguage();
   const chapter = sequence ? String(sequence).padStart(2, "0") : "EN";
 
   return (
     <div
       role="img"
-      aria-label={`${label} বিষয়ের উদাহরণমূলক English course cover`}
+      aria-label={`${label} ${t("coursecard.status")}`}
       className="editorial-course-cover"
     >
       <div aria-hidden="true" className="course-cover-orbit" />
