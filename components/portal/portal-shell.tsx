@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { href: "/app/homework", label: "portal.nav.homework" },
   { href: "/app/progress", label: "portal.nav.progress" },
   { href: "/app/doubts", label: "portal.nav.doubts" },
+  { href: "/app/coins", label: "portal.nav.coins" },
   { href: "/app/payments", label: "portal.nav.payments" },
   { href: "/app/settings", label: "portal.nav.settings" },
 ] as const;
@@ -36,6 +37,20 @@ export function PortalShell({ title, children }: PortalShellProps) {
           padding: "1.5rem 0",
         }}
       >
+        <div style={{ margin: "0 0 0.75rem", padding: "0.75rem 1.25rem", borderBottom: "1px solid var(--color-best-border)" }}>
+          <p style={{ fontSize: "0.7rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-best-muted)", marginBottom: "0.3rem" }}>
+            Coins
+          </p>
+          <Link href="/app/coins" style={{ display: "flex", alignItems: "center", gap: "0.4rem", textDecoration: "none" }}>
+            <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="10" cy="10" r="10" fill="#FDBA3B" />
+              <text x="10" y="14" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1A1917" fontFamily="sans-serif">C</text>
+            </svg>
+            <span style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--color-best-ink)" }}>0</span>
+            <span style={{ fontSize: "0.75rem", color: "var(--color-best-muted)" }}>Coins</span>
+          </Link>
+        </div>
+
         <ul style={{ display: "grid", gap: ".25rem" }}>
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>

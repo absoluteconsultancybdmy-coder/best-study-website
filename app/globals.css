@@ -469,7 +469,8 @@ h6 {
 .book-page-shimmer {
   position: absolute;
   inset: -20% -35%;
-  background: linear-gradient(105deg, transparent 40%, rgb(253 186 59 / 0.2) 50%, transparent 60%);
+  background: linear-gradient(105deg, transparent 38%, rgb(253 186 59 / 0.28) 50%, transparent 62%);
+  animation: book-shimmer 4s ease-in-out infinite;
   transform: translateX(-46%) rotate(4deg);
   transform-origin: left center;
   animation: page-shimmer 7.5s ease-in-out infinite;
@@ -552,7 +553,7 @@ h6 {
   z-index: 2;
   background: linear-gradient(110deg, transparent 42%, rgb(250 249 247 / 0.54) 49%, transparent 56%);
   transform: translateX(-45%);
-  animation: scene-light-sweep 8s ease-in-out infinite;
+  animation: scene-light-sweep 7s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -687,15 +688,27 @@ h6 {
   }
 }
 
+@keyframes book-shimmer {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(-8%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(8%);
+  }
+}
+
 @keyframes scene-light-sweep {
   0%,
-  24% {
+  15% {
     opacity: 0;
-    transform: translateX(-45%);
+    transform: translateX(-55%);
   }
-  45%,
-  62% {
-    opacity: 0.8;
+  35%,
+  60% {
+    opacity: 0.7;
   }
   82%,
   100% {
@@ -2682,6 +2695,106 @@ section[id] {
   padding: 0.65rem 0.85rem;
   color: var(--color-best-ink);
   transform: translateZ(52px);
+}
+
+/* ── Schools page ── */
+.schools-page-hero {
+  background: linear-gradient(128deg, #171b18 0%, #123d31 58%, #082c23 100%);
+  color: var(--color-best-cream);
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.schools-page-hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.schools-page-hero p {
+  margin-top: 0.75rem;
+  opacity: 0.7;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.schools-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 0 4rem;
+}
+
+.school-glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 106, 78, 0.18);
+  border-radius: 14px;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+
+.school-glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 106, 78, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.school-glass-card:hover {
+  box-shadow: 0 12px 32px rgb(0 106 78 / 0.14);
+  transform: translateY(-3px);
+}
+
+.school-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  background: rgba(0, 106, 78, 0.1);
+  margin-bottom: 1rem;
+}
+
+.school-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-best-ink);
+  line-height: 1.4;
+}
+
+.school-card-location {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-best-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ── Coin badge (header + portal) ── */
+.coin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgb(253 186 59 / 0.15);
+  border: 1px solid rgb(253 186 59 / 0.35);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-best-ink);
+  text-decoration: none;
+}
+
+.coin-badge:hover {
+  background: rgb(253 186 59 / 0.25);
 }
 
 .owner-brand-chip {

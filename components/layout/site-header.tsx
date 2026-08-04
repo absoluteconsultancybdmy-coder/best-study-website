@@ -57,12 +57,21 @@ export function SiteHeader() {
 
           <div className="header-actions flex shrink-0 items-center gap-2 pr-1">
             {session ? (
-              <Link
-                href="/app"
-                className="tap-target inline-flex items-center justify-center px-3 py-2 text-sm font-semibold no-underline text-best-green hover:text-best-green-hover"
-              >
-                {t("layout.header.portal")} →
-              </Link>
+              <>
+                <Link href="/app/coins" className="coin-badge">
+                  <svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true">
+                    <circle cx="6.5" cy="6.5" r="6.5" fill="#FDBA3B" />
+                    <text x="6.5" y="9.5" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#1A1917" fontFamily="sans-serif">C</text>
+                  </svg>
+                  0
+                </Link>
+                <Link
+                  href="/app"
+                  className="tap-target inline-flex items-center justify-center px-3 py-2 text-sm font-semibold no-underline text-best-green hover:text-best-green-hover"
+                >
+                  {t("layout.header.portal")} →
+                </Link>
+              </>
             ) : (
               <Link
                 href="/login"

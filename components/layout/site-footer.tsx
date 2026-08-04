@@ -23,7 +23,6 @@ const footerLinks: readonly { href: string; label: DictionaryKey }[] = [
 const payments = [
   { name: "bKash", bg: "#E2136E", mark: "b", color: "#fff" },
   { name: "Nagad", bg: "#F5821F", mark: "N", color: "#fff" },
-  { name: "COIN", bg: "#F6C90E", mark: "COIN", color: "#1A1917" },
 ];
 
 export function SiteFooter() {

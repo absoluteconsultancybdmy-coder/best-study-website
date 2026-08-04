@@ -481,6 +481,7 @@ const defs = {
   "portal.nav.homework": { bn: "হোমওয়ার্ক", en: "Homework" },
   "portal.nav.progress": { bn: "অগ্রগতি", en: "Progress" },
   "portal.nav.doubts": { bn: "সন্দেহ পাঠাও", en: "Submit doubt" },
+  "portal.nav.coins": { bn: "কয়েন", en: "Coins" },
   "portal.nav.payments": { bn: "পেমেন্ট", en: "Payments" },
   "portal.nav.settings": { bn: "সেটিংস", en: "Settings" },
   "portal.nav.logout": { bn: "লগআউট", en: "Log out" },
