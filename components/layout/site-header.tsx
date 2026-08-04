@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Container } from "@/components/layout/container";
 import { useLanguage } from "@/lib/i18n/language-context";
 import type { DictionaryKey } from "@/lib/i18n/dictionary";
@@ -15,6 +16,8 @@ const navigation: readonly { key: DictionaryKey; href: string }[] = [
 
 export function SiteHeader() {
   const { t } = useLanguage();
+  const [session, setSession] = useState("");
+  useEffect(() => { setSession(localStorage.getItem("best-study-session") ?? ""); }, []);
 
   return (
     <header className="story-site-header sticky top-0 z-20 border-b border-best-border bg-best-cream">
@@ -53,12 +56,21 @@ export function SiteHeader() {
           </nav>
 
           <div className="header-actions flex shrink-0 items-center gap-2 pr-1">
-            <a
-              href="#"
-              className="header-contact-chip tap-target content-placeholder hidden items-center lg:inline-flex"
-            >
-              {t("layout.contact.phone")}
-            </a>
+            {session ? (
+              <Link
+                href="/app"
+                className="tap-target inline-flex items-center justify-center px-3 py-2 text-sm font-semibold no-underline text-best-green hover:text-best-green-hover"
+              >
+                {t("layout.header.portal")} →
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                className="tap-target inline-flex items-center justify-center px-3 py-2 text-sm font-semibold no-underline text-best-body hover:text-best-green"
+              >
+                {t("layout.header.login")}
+              </Link>
+            )}
             <Link
               href="/#lead"
               className="button-primary tap-target inline-flex items-center justify-center px-3 py-2 text-center text-sm font-semibold no-underline sm:px-4 sm:text-base"

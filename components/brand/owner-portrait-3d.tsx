@@ -45,8 +45,8 @@ export function OwnerPortrait3D({
       {showCaption ? (
         <figcaption className="owner-portrait-caption">
           <strong>BEST TUTORIAL HOME-এর Owner</strong>
-          <span className="content-placeholder">[শিক্ষকের নাম] PLACEHOLDER</span>
-          <p>বিস্তারিত পরিচিতি প্রতিষ্ঠাতার অনুমোদনের পর যোগ হবে।</p>
+          <span>Md. Intizam Chowdhury</span>
+          <p>রাজশাহী · ১৫+ বছরের অভিজ্ঞতা · PhD</p>
         </figcaption>
       ) : null}
     </figure>

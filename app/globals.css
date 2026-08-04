@@ -140,10 +140,6 @@ h6 {
 
 .content-placeholder {
   color: var(--color-best-muted);
-  text-decoration-line: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
 }
 
 .tap-target {
@@ -957,6 +953,84 @@ section[id] {
   box-shadow:
     inset 0 1px 0 rgb(250 249 247 / 0.9),
     0 24px 70px rgb(26 25 23 / 0.05);
+}
+
+/* Schools Trust Strip */
+.schools-strip {
+  display: flex;
+  align-items: center;
+  background: var(--color-best-ink);
+  height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(255 255 255 / 0.07);
+}
+
+.schools-strip-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1rem 0 1.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-best-saffron);
+  border-right: 1px solid rgb(255 255 255 / 0.1);
+  white-space: nowrap;
+  height: 100%;
+}
+
+.schools-marquee-outer {
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.schools-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: schools-marquee 34s linear infinite;
+}
+
+.schools-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.schools-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: rgb(255 255 255 / 0.78);
+  padding: 0 0.6rem;
+  gap: 0.6rem;
+}
+
+.schools-marquee-dot {
+  font-size: 0.4rem;
+  color: var(--color-best-saffron);
+  opacity: 0.6;
+}
+
+@keyframes schools-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schools-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    padding: 0.3rem 0.75rem;
+    gap: 0.5rem;
+  }
 }
 
 .premium-class-selector::before {
@@ -2135,7 +2209,7 @@ section[id] {
   }
 
   .story-hero-object {
-    margin-top: 0.15rem;
+    display: none;
   }
 
   .story-hero .premium-book-scene {
@@ -2838,4 +2912,64 @@ section[id] {
 .footer-brand-lockup small {
   font-family: var(--font-body-en);
   font-weight: 400;
+}
+
+/* Results / stats section */
+.results-section {
+  padding-block: 4rem 3.5rem;
+  background: var(--color-best-paper);
+}
+
+.results-section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-best-ink);
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.results-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--color-best-cream);
+  border-radius: 1rem;
+  border: 1px solid var(--color-best-border);
+}
+
+.results-value {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-best-green);
+  line-height: 1;
+}
+
+.results-label {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-best-ink);
+}
+
+.results-sublabel {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--color-best-muted);
+}
+
+@media (max-width: 599px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-inline: auto;
+  }
 }

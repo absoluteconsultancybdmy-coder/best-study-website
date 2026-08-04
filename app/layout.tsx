@@ -7,13 +7,18 @@ import { LanguageProvider } from "@/lib/i18n/language-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "বেস্ট টিউটোরিয়াল হোম",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  title: { default: "বেস্ট টিউটোরিয়াল হোম", template: "%s — বেস্ট টিউটোরিয়াল হোম" },
   description:
     "বাংলা মিডিয়ামের শিক্ষার্থীদের জন্য English Grammar, Writing, Reading, Vocabulary ও Board English শেখার প্ল্যাটফর্ম।",
-  icons: {
-    icon: "/images/brand/best-study-logo.png",
-    apple: "/images/brand/best-study-logo.png",
+  icons: { icon: "/images/brand/best-study-logo.png", apple: "/images/brand/best-study-logo.png" },
+  openGraph: {
+    type: "website",
+    locale: "bn_BD",
+    siteName: "বেস্ট টিউটোরিয়াল হোম",
+    images: [{ url: "/images/brand/best-study-logo.png", width: 512, height: 512, alt: "বেস্ট টিউটোরিয়াল হোম" }],
   },
+  twitter: { card: "summary", images: ["/images/brand/best-study-logo.png"] },
 };
 
 export default function RootLayout({

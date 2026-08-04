@@ -49,6 +49,9 @@ export const classGroups: readonly ClassGroup[] = [
     title: { bn: "ক্লাস", en: "Class" },
     columns: 5,
     options: [
+      { label: "৩", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=3" },
+      { label: "৪", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=4" },
+      { label: "৫", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=5" },
       { label: "৬", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=6" },
       { label: "৭", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=7" },
       { label: "৮", helper: { bn: "ক্লাস", en: "Class" }, href: "/courses?class=8" },

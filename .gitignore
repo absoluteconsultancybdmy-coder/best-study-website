@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local claude code session data
+.claude/
+
+# graphify output
+graphify-out/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

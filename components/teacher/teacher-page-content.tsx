@@ -19,38 +19,44 @@ export function TeacherPageContent() {
     <>
       <section
         aria-labelledby="teacher-page-title"
-        className="border-b border-best-border bg-best-paper py-8 sm:py-12"
+        className="premium-hero border-b border-best-border py-8 sm:py-12"
       >
         <Container>
           <nav aria-label={t("teacherpage.breadcrumb.nav")} className="text-sm text-best-muted">
             <Link href="/" className="no-underline hover:text-best-green">
               {t("teacherpage.breadcrumb.home")}
             </Link>
-            <span aria-hidden="true" className="mx-2">
-              ›
-            </span>
+            <span aria-hidden="true" className="mx-2">›</span>
             <span aria-current="page">{t("teacherpage.breadcrumb.teacher")}</span>
           </nav>
 
           <div className="mt-6 grid gap-10 md:grid-cols-[minmax(260px,380px)_1fr] md:items-center lg:gap-14">
             <OwnerPortrait3D priority size="large" showCaption={false} />
 
-            <div>
-              <p className="text-sm font-semibold text-best-muted">{t("teacherpage.ownerLabel")}</p>
-              <h1 id="teacher-page-title" className="mt-2 text-3xl sm:text-4xl">
-                <span className="content-placeholder">{t("teacherpage.ownerName")}</span>
+            <div className="glass-card rounded-2xl p-7 sm:p-9">
+              <p className="text-xs font-semibold uppercase tracking-widest text-best-green">
+                {t("teacherpage.ownerLabel")}
+              </p>
+              <h1
+                id="teacher-page-title"
+                className="mt-3 text-4xl font-bold leading-[1.15] sm:text-5xl"
+                style={{ letterSpacing: "-0.01em" }}
+              >
+                {t("teacherpage.ownerName")}
               </h1>
-              <p className="content-placeholder mt-4 max-w-2xl">{t("teacherpage.ownerDesc")}</p>
-              <p className="mt-3 max-w-2xl text-best-body">{t("teacherpage.ownerNote")}</p>
-              <p className="content-placeholder mt-4 border-t border-best-border pt-4 font-semibold">
+              <p className="mt-4 max-w-2xl leading-[1.8] text-best-body">{t("teacherpage.ownerDesc")}</p>
+              <p className="mt-4 inline-flex items-center gap-2 border-t border-best-border pt-4 text-sm font-semibold text-best-green">
+                <span style={{ fontSize: "1rem" }}>🎓</span>
                 {t("teacherpage.ownerCred")}
               </p>
-              <Link
-                href="/#lead"
-                className="button-primary tap-target mt-6 inline-flex items-center justify-center px-6 py-3 font-semibold no-underline"
-              >
-                {t("teacherpage.cta")}
-              </Link>
+              <div className="mt-6">
+                <Link
+                  href="/#lead"
+                  className="button-primary tap-target inline-flex items-center justify-center px-6 py-3 font-semibold no-underline"
+                >
+                  {t("teacherpage.cta")}
+                </Link>
+              </div>
             </div>
           </div>
         </Container>
@@ -63,8 +69,7 @@ export function TeacherPageContent() {
               {t("teacherpage.philosophy.title")}
             </h2>
             <div className="border-l-2 border-best-saffron pl-5">
-              <p className="content-placeholder">{t("teacherpage.philosophy.placeholder")}</p>
-              <p className="mt-3 text-best-body">{t("teacherpage.philosophy.note")}</p>
+              <p>{t("teacherpage.philosophy.placeholder")}</p>
             </div>
           </div>
         </Container>
@@ -78,7 +83,6 @@ export function TeacherPageContent() {
           <h2 id="student-help-title" className="text-2xl sm:text-3xl">
             {t("teacherpage.help.title")}
           </h2>
-          <p className="mt-3 max-w-2xl text-best-muted">{t("teacherpage.help.note")}</p>
           <ul className="mt-6 grid list-none gap-4 p-0 sm:grid-cols-3">
             {helpItems.map((item) => (
               <li key={item.number} className="border border-best-border bg-best-cream p-5">
@@ -86,7 +90,7 @@ export function TeacherPageContent() {
                   {item.number}
                 </span>
                 <h3 className="mt-3 text-xl">{t(item.titleKey)}</h3>
-                <p className="content-placeholder mt-2 text-[15px]">{t(item.descKey)}</p>
+                <p className="mt-2 text-[15px]">{t(item.descKey)}</p>
               </li>
             ))}
           </ul>
@@ -124,7 +128,7 @@ export function TeacherPageContent() {
               <h2 id="teacher-video-title" className="text-2xl sm:text-3xl">
                 {t("teacherpage.video.title")}
               </h2>
-              <p className="content-placeholder mt-4">{t("teacherpage.video.placeholder")}</p>
+              <p className="mt-4 text-best-muted">{t("teacherpage.video.button")}</p>
             </div>
           </div>
         </Container>
@@ -141,7 +145,7 @@ export function TeacherPageContent() {
               <h2 id="parent-trust-title" className="mt-2 text-2xl sm:text-3xl">
                 {t("teacherpage.parent.title")}
               </h2>
-              <p className="content-placeholder mt-4 max-w-2xl">{t("teacherpage.parent.placeholder")}</p>
+              <p className="mt-4 max-w-2xl">{t("teacherpage.parent.placeholder")}</p>
             </div>
             <Link
               href="/#lead"

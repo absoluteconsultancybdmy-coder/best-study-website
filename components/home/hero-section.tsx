@@ -29,7 +29,7 @@ export function HeroSection() {
           </div>
 
           <p className="story-teacher-note">
-            <span className="content-placeholder font-semibold">
+            <span className="font-semibold">
               {t("hero.teacher.name")}
             </span>
             <span> · {t("hero.teacher.note")}</span>
