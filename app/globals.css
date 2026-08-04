@@ -469,11 +469,9 @@ h6 {
 .book-page-shimmer {
   position: absolute;
   inset: -20% -35%;
-  background: linear-gradient(105deg, transparent 38%, rgb(253 186 59 / 0.28) 50%, transparent 62%);
-  animation: book-shimmer 4s ease-in-out infinite;
-  transform: translateX(-46%) rotate(4deg);
+  background: linear-gradient(105deg, transparent 32%, rgb(253 186 59 / 0.5) 50%, transparent 68%);
   transform-origin: left center;
-  animation: page-shimmer 7.5s ease-in-out infinite;
+  animation: page-shimmer 5s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -647,15 +645,19 @@ h6 {
 
 @keyframes page-shimmer {
   0%,
-  38%,
-  100% {
+  15% {
     opacity: 0;
     transform: translateX(-46%) rotate(4deg);
   }
-  55%,
-  70% {
+  40%,
+  60% {
     opacity: 1;
     transform: translateX(46%) rotate(4deg);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateX(-46%) rotate(4deg);
   }
 }
 
@@ -685,6 +687,32 @@ h6 {
   100% {
     opacity: 0;
     transform: translateX(42%);
+  }
+}
+
+.story-hero-sweep {
+  position: absolute;
+  inset: -40% -20%;
+  z-index: 1;
+  background: linear-gradient(110deg, transparent 38%, rgb(250 249 247 / 0.1) 50%, transparent 62%);
+  animation: hero-full-sweep 6s ease-in-out 0.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes hero-full-sweep {
+  0%,
+  10% {
+    opacity: 0;
+    transform: translateX(-55%);
+  }
+  38%,
+  58% {
+    opacity: 1;
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateX(55%);
   }
 }
 
@@ -736,6 +764,7 @@ h6 {
   }
 
   .premium-hero::after,
+  .story-hero-sweep,
   .hero-light-sweep,
   .hero-orbit,
   .hero-sparkle,
@@ -917,6 +946,7 @@ h6 {
   .book-page-shimmer,
   .book-ground-glow,
   .premium-hero::after,
+  .story-hero-sweep,
   .hero-light-sweep,
   .hero-sparkle,
   .subject-glass-card {

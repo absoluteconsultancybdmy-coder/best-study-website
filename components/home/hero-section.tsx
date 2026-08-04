@@ -10,6 +10,7 @@ export function HeroSection() {
 
   return (
     <section aria-labelledby="home-title" className="story-hero">
+      <div aria-hidden="true" className="story-hero-sweep" />
       <Container className="story-hero-stage">
         <div className="story-hero-copy">
           <p className="story-eyebrow">{t("hero.eyebrow")}</p>
